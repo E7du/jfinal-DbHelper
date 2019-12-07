@@ -26,8 +26,8 @@ JFinal-DbHelper
 
 - 创建一个 Model:User, 她是这样的:
 
-	```java
-	@Table(name = User.TABLE)
+```java
+@Table(name = User.TABLE)
 public class User extends DataRecordModel<User> {
 
 	private static final long serialVersionUID = 7098160284590588258L;
