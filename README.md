@@ -51,7 +51,7 @@ public class User extends DataRecordModel<User> {
 }
 ```
 	
-3. 接下来你再创建一个 Service,她是这样的:
+- 接下来你再创建一个 Service,她是这样的:
 
 ```java
 public class UserService extends DBService {
@@ -62,7 +62,7 @@ public class UserService extends DBService {
 }
 ```
 
-4.在加上一个 RedisCacheService, 她是这样的:
+- 在加上一个 RedisCacheService, 她是这样的:
 
 ```java
 public class UserRedisService extends RedisCacheService {
@@ -73,7 +73,7 @@ public class UserRedisService extends RedisCacheService {
 }
 ``` 
 
-5.完成了上面的工作, 你就可以开始使用了哦:
+- 完成了上面的工作, 你就可以开始使用了哦:
 
 ```java
 		//设置产品 name
@@ -107,7 +107,7 @@ public class UserRedisService extends RedisCacheService {
 		System.out.println("delete=="+ret);
 ```
 
-6.最后是怎样的？
+- 最后是怎样的？
   	![db](db.png)
   	![redis data](redis_data.png)
   	![redis list](redis_lst.png)
