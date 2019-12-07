@@ -12,18 +12,21 @@ JFinal-DbHelper
 
 怎样使用
 =======
-1. 假设你的表是这样的:
-	```
+
+- 假设你的表是这样的:
+
+```sql
 	CREATE TABLE `user` (
  	 `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT, 
  	 `name` varchar(255) DEFAULT NULL,
  	 PRIMARY KEY (`id`),
   	 KEY `id` (`id`)
 	) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
-	```
-2. 创建一个 Model:User, 她是这样的:
+```
 
-	```
+- 创建一个 Model:User, 她是这样的:
+
+	```java
 	@Table(name = User.TABLE)
 public class User extends DataRecordModel<User> {
 
@@ -46,10 +49,11 @@ public class User extends DataRecordModel<User> {
 	@Table.Column(name = User.NAME, as = User.NAME_AS, originType = Table.ColumnOriginType.STRING)
 	public String name;
 }
-	```
+```
+	
 3. 接下来你再创建一个 Service,她是这样的:
 
-```
+```java
 public class UserService extends DBService {
 
 	private static final long serialVersionUID = -6341896364271284419L;
@@ -57,9 +61,10 @@ public class UserService extends DBService {
 	//这里放自定义的其他方法
 }
 ```
+
 4.在加上一个 RedisCacheService, 她是这样的:
 
-```
+```java
 public class UserRedisService extends RedisCacheService {
 
 	private static final long serialVersionUID = 8673372135373269417L;
@@ -67,9 +72,10 @@ public class UserRedisService extends RedisCacheService {
 	//这里放自定义的其他方法
 }
 ``` 
+
 5.完成了上面的工作, 你就可以开始使用了哦:
 
-```
+```java
 		//设置产品 name
 		ProductKit.PRODUCT_NAME = "zcq";
 		
@@ -100,7 +106,8 @@ public class UserRedisService extends RedisCacheService {
 		ret = userService.delete(user);
 		System.out.println("delete=="+ret);
 ```
+
 6.最后是怎样的？
-  	![](db.png)
-  	![](redis_data.png)
-  	![](redis_lst.png)
+  	![db](db.png)
+  	![redis data](redis_data.png)
+  	![redis list](redis_lst.png)
